@@ -8,7 +8,7 @@ function Cabecera() {
     const [desplegado,setDesplegado]=useState(false)
     const[sofa,setSofa]=useState(false)
    const [muebles,setMuebles]= useState([])
-   const {VITE_API}=import.meta.env
+   const {VITE_MUEBLES}=import.meta.env
     const toggleMenu = ()=>{
         setMenu(!menu)
         setDesplegado(!desplegado)
@@ -26,12 +26,13 @@ function Cabecera() {
       const controller = new AbortController();
       const options = {
         metod: "GET",
+        mode:'no-cors',
         headers: {
           "content-type": "application/json",
         },
         signal: controller.signal,
       };
-      fetch(VITE_API+'/muebles', options)
+      fetch(VITE_MUEBLES, options)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
