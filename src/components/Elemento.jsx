@@ -18,7 +18,7 @@ export default function Elemento() {
           },
           signal: controller.signal,
         };
-        fetch(VITE_API+'/modelos', options)
+        fetch(VITE_API+'modelos', options)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
