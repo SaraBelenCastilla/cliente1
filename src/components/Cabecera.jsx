@@ -26,7 +26,7 @@ function Cabecera() {
       const controller = new AbortController();
       const options = {
         metod: "GET",
-        mode:'no-cors',
+       
         headers: {
           "content-type": "application/json",
         },
